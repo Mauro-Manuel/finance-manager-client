@@ -22,7 +22,8 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-        //basic validation
+
+
         if (!validateEmail(email)) {
             setError("Please enter valid email address");
             setIsLoading(false);
@@ -93,19 +94,13 @@ const Login = () => {
                                  type="password"
                                 />
 
-
-                        {error && (
-                            <p className="text-red-800 text-sm text-center bg-red-50 p-2 rounded">
-                                {error}
-                            </p>
-                        )}
                         {error && (
                             <p className="text-red-800 text-sm text-center bg-red-50 p-2 rounded">
                                 {error}
                             </p>
                         )}
 
-                        <button disabled={isLoading} className={`btn-primary w-full py-3 text-lg font-medium flex items-center justify-center gap-2 ${isLoading ? 'opacity-60 cursor-not-allowed': ''}`} type="submit">
+                        <button disabled={isLoading} className={`btn-primary w-full py-3 text-lg font-medium flex items-center justify-center gap-2 cursor-pointer ${isLoading ? 'opacity-60 cursor-not-allowed': ''}`} type="submit">
                             {isLoading ? (
                                 <>
                                     <LoaderCircle className="animate-spin w-5 h-5" />

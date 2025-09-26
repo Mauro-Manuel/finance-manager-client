@@ -13,6 +13,7 @@ import uploadProfileImage from "../util/uploadProfileImage.js";
 
 const Signup = () => {
     const [fullName, setFullName] = useState("");
+    const [contact, setContact] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
@@ -29,6 +30,13 @@ const Signup = () => {
         //basic validation
         if (!fullName.trim()) {
             setError("Please enter your fullname");
+            setIsLoading(false);
+            return;
+        }
+
+        //basic validation
+        if (!contact.trim()) {
+            setError("Please enter your contact");
             setIsLoading(false);
             return;
         }
@@ -59,6 +67,7 @@ const Signup = () => {
                 fullName,
                 email,
                 password,
+                contact,
                 profileImageUrl
             })
             if (response.status === 201) {
@@ -91,7 +100,7 @@ const Signup = () => {
                         </p>
 
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            <div className="flex justify-center mb-6">
+                            <div className="flex justify-center mb-4">
                                 <ProfilePhotoSelector image={profilePhoto} setImage={setProfilePhoto}/>
                             </div>
                             {/*<div className="grid grid-cols-2 md:grid-cols-2 gap-4">*/}
@@ -102,6 +111,14 @@ const Signup = () => {
                                     placeholder="Jhon Doe"
                                     type="text"
                                 />
+
+                            <Input
+                                value={contact}
+                                onChange={(e) => setContact(e.target.value)}
+                                label="Contact Number"
+                                placeholder="921000000"
+                                type="text"
+                            />
 
                                 <Input
                                     value={email}

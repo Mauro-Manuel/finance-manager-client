@@ -4,7 +4,9 @@ import moment from "moment";
 import {useState} from "react";
 
 const IncomeList = ({transactions, onDelete, onDownload, onEmail}) => {
+
     const [loading, setLoading] = useState(false);
+
     const handleEmail = async () => {
         setLoading(true);
         try {

@@ -1,4 +1,5 @@
 export const BASE_URL = "https://finance-manager-api-thjg.onrender.com/api/v1";
+//export const BASE_URL = "http://localhost:8080/api/v1";
 const CLOUDINARY_CLOUD_NAME = "dom0v7pyo";
 
 export const API_ENDPOINTS = {

@@ -80,7 +80,7 @@ const CustomLineChart = ({ data }) => {
                         stroke="#875cf5"
                         fill="url(#expenseGradient)"
                         strokeWidth={3}
-                        dot={{ r: 3, fill: "#ab8df8" }}
+                        dot={{ r: 3, fill: "#155e75" }}
                     />
                 </AreaChart>
             </ResponsiveContainer>

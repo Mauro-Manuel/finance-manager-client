@@ -89,7 +89,7 @@ const Filter = () => {
                                 <label htmlFor="keyword" className="block text-sm font-medium mb-1">Search</label>
                                 <input value={keyword} id="keyword" type="text" placeholder="Search..." className="w-full border rounded px-3 py-2" onChange={e => setKeyword(e.target.value)} />
                             </div>
-                            <button onClick={handleSearch} className="ml-2 mb-1 p-2 bg-purple-800 hover:bg-purple-800 text-white rounded flex items-center justify-center cursor-pointer">
+                            <button onClick={handleSearch} className="ml-2 mb-1 p-2 bg-cyan-800 hover:bg-cyan-800 text-white rounded flex items-center justify-center cursor-pointer">
                                 <Search size={20} />
                             </button>
                         </div>

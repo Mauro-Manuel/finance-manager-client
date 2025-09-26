@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useContext } from "react";
-import {User, LogOut, X, Menu} from "lucide-react";
+import {User, LogOut, X, Menu, HandCoins, WalletCards, Landmark} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import {assets} from "../assets/assets.js";
 import {AppContext} from "../context/AppContext.jsx";
@@ -60,7 +60,8 @@ const Menubar = ({ activeMenu }) => {
                 </button>
 
                 <div className="flex items-center gap-2">
-                    <img src={assets.logo} alt="logo" className="h-10 w-10" />
+                    {/*<img src={assets.logo} alt="logo" className="h-10 w-10" />*/}
+                    <Landmark className="text-purple-900 h-10 w-10" />
                     <span className="text-lg font-medium text-black truncate">Finance Manager</span>
                 </div>
             </div>
@@ -71,7 +72,7 @@ const Menubar = ({ activeMenu }) => {
                     onClick={toggleDropdown}
                     className="flex items-center justify-center w-10 h-10 bg-gray-100 hover:bg-gray-200
                     rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-800
-                    focus:ring-offset-2"
+                    focus:ring-offset-2 cursor-pointer"
                 >
                     <img src={user?.profileImageUrl} alt="profile" className="w-10 h-10 rounded-full"/>
                 </button>
@@ -107,7 +108,7 @@ const Menubar = ({ activeMenu }) => {
                             <button
                                 onClick={handleLogout}
                                 className="flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700
-                                 hover:bg-gray-50 transition-colors duration-150"
+                                 hover:bg-gray-50 transition-colors duration-150 cursor-pointer"
                             >
                                 <LogOut className="w-4 h-4 text-gray-500" />
                                 <span>Logout</span>
